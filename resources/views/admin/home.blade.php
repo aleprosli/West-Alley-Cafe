@@ -51,6 +51,11 @@
                         <div class="tab-content account dashboard-content pl-50">
                             <div class="tab-pane fade active show" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                                 <div class="card">
+                                    @if( session()->has('alert-message'))
+                                        <div class="alert {{ session()->get('alert-type') }}">
+                                            {{ session()->get('alert-message') }}
+                                        </div>
+                                    @endif
                                     <div class="card-header">
                                         <h3 class="mb-0">Hello , {{ Auth::user()->name }} ! </h3>
                                     </div>
@@ -69,35 +74,29 @@
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th>Order</th>
-                                                        <th>Date</th>
-                                                        <th>Status</th>
-                                                        <th>Total</th>
-                                                        <th>Actions</th>
+                                                        <th>Nombor</th>
+                                                        <th>Category</th>
+                                                        <th>Name</th>
+                                                        <th>Harga</th>
+                                                        <th>Harga Promosi</th>
+                                                        <th>Gambar</th>
+                                                        <th>Lain Lain</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>#1357</td>
-                                                        <td>March 45, 2020</td>
-                                                        <td>Processing</td>
-                                                        <td>$125.00 for 2 item</td>
-                                                        <td><a href="#" class="btn-small d-block">View</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>#2468</td>
-                                                        <td>June 29, 2020</td>
-                                                        <td>Completed</td>
-                                                        <td>$364.00 for 5 item</td>
-                                                        <td><a href="#" class="btn-small d-block">View</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>#2366</td>
-                                                        <td>August 02, 2020</td>
-                                                        <td>Completed</td>
-                                                        <td>$280.00 for 3 item</td>
-                                                        <td><a href="#" class="btn-small d-block">View</a></td>
-                                                    </tr>
+                                                    @foreach( $foods as $key=> $food)
+                                                        <tr>
+                                                            <td>{{ $key + 1 }}</td>
+                                                            <td>{{ $food->category_id ?? NULL }}</td>
+                                                            <td>{{ $food->name }}</td>
+                                                            <td>{{ $food->price }}</td>
+                                                            <td>{{ $food->price_promotion }}</td>
+                                                            <td><a href="#" class="btn-small d-block">View</a>
+                                                            </td>
+                                                            <td><a href="{{ route('admin.home') }}" type="button" class="btn btn-warning font-weight-bold">Edit</a>
+                                                                <a href="{{ route('admin.home') }}" type="button" class="btn btn-danger submit font-weight-bold">Delete</a></td>
+                                                        </tr>
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
@@ -158,7 +157,8 @@
                                         <p>To track your order please enter your OrderID in the box below and press "Track" button. This was given to you on your receipt and in the confirmation email you should have received.</p>
                                         <div class="row">
                                             <div class="col-lg-8">
-                                                <form class="contact-form-style mt-30 mb-50" action="#" method="post">
+                                                <form class="contact-form-style mt-30 mb-50" action="{{ route('menu:store') }}" method="post">
+                                                    @csrf
                                                     <div class="input-style mb-20">
                                                         <label>Category</label>
                                                         <input name="category" placeholder="Category" type="text">
