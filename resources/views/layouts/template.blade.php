@@ -274,8 +274,9 @@
                         </div>
                     </div>
                     <div class="hotline d-none d-lg-flex">
-                        <img src="{!! asset('assets/imgs/theme/icons/icon-headphone.svg') !!}" alt="hotline">
-                        <p>1900 - 888<span>24/7 Support Center</span></p>
+                        <img src="{!! asset('assets/imgs/theme/icons/phone-call.svg') !!}" height="40px" width="40px" alt="hotline">
+                        <i class="fa fa-mobile" aria-hidden="true"></i>
+                        <p>60 13-609 0205<span>West Alley Cafe H/P</span></p>
                     </div>
                     <div class="header-action-icon-2 d-block d-lg-none">
                         <div class="burger-icon burger-icon-white">
