@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Food;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,6 +29,7 @@ class HomeController extends Controller
 
     public function adminHome()
     {
-        return view('admin.home');
+        $foods = Food::all();
+        return view('admin.home',compact('foods'));
     }
 }
