@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Food;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-    return view('user.home');
+
+    $foods = Food::all();
+
+    return view('user.home',compact('foods'));
 });
 
 Auth::routes();
