@@ -114,7 +114,7 @@
         </div>
     </div>
     <header class="header-area header-style-1 header-height-2">
-        <div class="mobile-promotion"><span>Grand opening, <strong>up to 15%</strong> off all items. Only <strong>3 days</strong> left</span></div>
+        {{-- <div class="mobile-promotion"><span>Grand opening, <strong>up to 15%</strong> off all items. Only <strong>3 days</strong> left</span></div> --}}
         <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
             <div class="container">
                 <div class="header-wrap">
@@ -232,37 +232,6 @@
                                 <span class="fi-rs-apps"></span> <span class="et">Browse</span> All Categories
                                 <i class="fi-rs-angle-down"></i>
                             </a>
-                            <div class="categories-dropdown-wrap categories-dropdown-active-large font-heading">
-                                <div class="d-flex categori-dropdown-inner">
-                                    <ul>
-                                        <li><a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-1.svg" alt="">Milks and Dairies</a></li>
-                                        <li><a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-2.svg" alt="">Clothing & beauty</a></li>
-                                        <li><a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-3.svg" alt="">Pet Foods & Toy</a></li>
-                                        <li><a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-4.svg" alt="">Baking material</a></li>
-                                        <li><a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-5.svg" alt="">Fresh Fruit</a></li>
-                                    </ul>
-                                    <ul class="end">
-                                        <li><a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-6.svg" alt="">Wines & Drinks</a></li>
-                                        <li><a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-7.svg" alt="">Fresh Seafood</a></li>
-                                        <li><a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-8.svg" alt="">Fast food</a></li>
-                                        <li><a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-9.svg" alt="">Vegetables</a></li>
-                                        <li><a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/category-10.svg" alt="">Bread and Juice</a></li>
-                                    </ul>
-                                </div>
-                                <div class="more_slide_open" style="display: none;">
-                                    <div class="d-flex categori-dropdown-inner">
-                                        <ul>
-                                            <li><a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/icon-1.svg" alt="">Milks and Dairies</a></li>
-                                            <li><a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/icon-2.svg" alt="">Clothing & beauty</a></li>
-                                        </ul>
-                                        <ul class="end">
-                                            <li><a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/icon-3.svg" alt="">Wines & Drinks</a></li>
-                                            <li><a href="shop-grid-right.html"> <img src="assets/imgs/theme/icons/icon-4.svg" alt="">Fresh Seafood</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="more_categories"> <span class="icon"></span> <span class="heading-sm-1">Show more...</span></div>
-                            </div>
                         </div>
                         <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                             <nav>
@@ -287,26 +256,28 @@
                     </div>
                     <div class="header-action-right d-block d-lg-none">
                         <div class="header-action-2">
+                            @guest
                             <div class="header-action-icon-2">
-                                <a href="shop-wishlist.html">
-                                    <img alt="Nest" src="assets/imgs/theme/icons/icon-heart.svg">
-                                    <span class="pro-count white">4</span>
+                                <a href="{{ route('login') }}">
+                                    <img class="svgInject" alt="Nest" src="{!!asset('assets/imgs/theme/icons/icon-user.svg')!!}">
                                 </a>
+                                <span class="lable ml-0">Account</span>
                             </div>
                             <div class="header-action-icon-2">
                                 <a class="mini-cart-icon" href="shop-cart.html">
-                                    <img alt="Nest" src="assets/imgs/theme/icons/icon-cart.svg">
-                                    <span class="pro-count white">2</span>
+                                    <img alt="Nest" src="{!!asset('assets/imgs/theme/icons/icon-cart.svg')!!}">
+                                    <span class="pro-count blue">2</span>
                                 </a>
+                                <span class="lable">Cart</span>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2">
                                     <ul>
                                         <li>
                                             <div class="shopping-cart-img">
-                                                <a href="shop-product-right.html"><img alt="Nest" src="assets/imgs/shop/thumbnail-3.jpg"></a>
+                                                <a href="shop-product-right.html"><img alt="Nest" src="{!!asset('assets/imgs/shop/thumbnail-3.jpg')!!}"></a>
                                             </div>
                                             <div class="shopping-cart-title">
-                                                <h4><a href="shop-product-right.html">Plain Striola Shirts</a></h4>
-                                                <h3><span>1 × </span>$800.00</h3>
+                                                <h4><a href="shop-product-right.html">Daisy Casual Bag</a></h4>
+                                                <h4><span>1 × </span>$800.00</h4>
                                             </div>
                                             <div class="shopping-cart-delete">
                                                 <a href="#"><i class="fi-rs-cross-small"></i></a>
@@ -314,11 +285,11 @@
                                         </li>
                                         <li>
                                             <div class="shopping-cart-img">
-                                                <a href="shop-product-right.html"><img alt="Nest" src="assets/imgs/shop/thumbnail-4.jpg"></a>
+                                                <a href="shop-product-right.html"><img alt="Nest" src="{!!asset('assets/imgs/shop/thumbnail-2.jpg')!!}"></a>
                                             </div>
                                             <div class="shopping-cart-title">
-                                                <h4><a href="shop-product-right.html">Macbook Pro 2022</a></h4>
-                                                <h3><span>1 × </span>$3500.00</h3>
+                                                <h4><a href="shop-product-right.html">Corduroy Shirts</a></h4>
+                                                <h4><span>1 × </span>$3200.00</h4>
                                             </div>
                                             <div class="shopping-cart-delete">
                                                 <a href="#"><i class="fi-rs-cross-small"></i></a>
@@ -327,15 +298,36 @@
                                     </ul>
                                     <div class="shopping-cart-footer">
                                         <div class="shopping-cart-total">
-                                            <h4>Total <span>$383.00</span></h4>
+                                            <h4>Total <span>$4000.00</span></h4>
                                         </div>
                                         <div class="shopping-cart-button">
-                                            <a href="shop-cart.html">View cart</a>
+                                            <a href="shop-cart.html" class="outline">View cart</a>
                                             <a href="shop-checkout.html">Checkout</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            @else
+                            <div class="header-action-icon-2">
+                                <a class="mini-cart-icon" href="shop-cart.html">
+                                    <img class="svgInject" alt="Nest" src="{!!asset('assets/imgs/theme/icons/icon-user.svg')!!}">
+                                </a>
+                                <span class="lable">{{ Auth::user()->name }}</span>
+                                <div class="cart-dropdown-wrap cart-dropdown-hm2">
+                                    <ul>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                          document.getElementById('logout-form').submit();"><i class="fi-rs-sign-out mr-10"></i>Logout</a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -362,127 +354,23 @@
                         <button type="submit"><i class="fi-rs-search"></i></button>
                     </form>
                 </div>
-                <div class="mobile-menu-wrap mobile-header-border">
-                    <!-- mobile menu start -->
-                    <nav>
-                        <ul class="mobile-menu font-heading">
-                            <li class="menu-item-has-children"><a href="index.html">Home</a>
-                                <ul class="dropdown">
-                                    <li><a href="index.html">Home 1</a></li>
-                                    <li><a href="index-2.html">Home 2</a></li>
-                                    <li><a href="index-3.html">Home 3</a></li>
-                                    <li><a href="index-4.html">Home 4</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="shop-grid-right.html">shop</a>
-                                <ul class="dropdown">
-                                    <li><a href="shop-grid-right.html">Shop Grid – Right Sidebar</a></li>
-                                    <li><a href="shop-grid-left.html">Shop Grid – Left Sidebar</a></li>
-                                    <li><a href="shop-list-right.html">Shop List – Right Sidebar</a></li>
-                                    <li><a href="shop-list-left.html">Shop List – Left Sidebar</a></li>
-                                    <li><a href="shop-fullwidth.html">Shop - Wide</a></li>
-                                    <li class="menu-item-has-children"><a href="#">Single Product</a>
-                                        <ul class="dropdown">
-                                            <li><a href="shop-product-right.html">Product – Right Sidebar</a></li>
-                                            <li><a href="shop-product-left.html">Product – Left Sidebar</a></li>
-                                            <li><a href="shop-product-full.html">Product – No sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="shop-filter.html">Shop – Filter</a></li>
-                                    <li><a href="shop-wishlist.html">Shop – Wishlist</a></li>
-                                    <li><a href="shop-cart.html">Shop – Cart</a></li>
-                                    <li><a href="shop-checkout.html">Shop – Checkout</a></li>
-                                    <li><a href="shop-compare.html">Shop – Compare</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="#">Mega menu</a>
-                                <ul class="dropdown">
-                                    <li class="menu-item-has-children"><a href="#">Women's Fashion</a>
-                                        <ul class="dropdown">
-                                            <li><a href="shop-product-right.html">Dresses</a></li>
-                                            <li><a href="shop-product-right.html">Blouses & Shirts</a></li>
-                                            <li><a href="shop-product-right.html">Hoodies & Sweatshirts</a></li>
-                                            <li><a href="shop-product-right.html">Women's Sets</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children"><a href="#">Men's Fashion</a>
-                                        <ul class="dropdown">
-                                            <li><a href="shop-product-right.html">Jackets</a></li>
-                                            <li><a href="shop-product-right.html">Casual Faux Leather</a></li>
-                                            <li><a href="shop-product-right.html">Genuine Leather</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children"><a href="#">Technology</a>
-                                        <ul class="dropdown">
-                                            <li><a href="shop-product-right.html">Gaming Laptops</a></li>
-                                            <li><a href="shop-product-right.html">Ultraslim Laptops</a></li>
-                                            <li><a href="shop-product-right.html">Tablets</a></li>
-                                            <li><a href="shop-product-right.html">Laptop Accessories</a></li>
-                                            <li><a href="shop-product-right.html">Tablet Accessories</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="blog-category-fullwidth.html">Blog</a>
-                                <ul class="dropdown">
-                                    <li><a href="blog-category-grid.html">Blog Category Grid</a></li>
-                                    <li><a href="blog-category-list.html">Blog Category List</a></li>
-                                    <li><a href="blog-category-big.html">Blog Category Big</a></li>
-                                    <li><a href="blog-category-fullwidth.html">Blog Category Wide</a></li>
-                                    <li class="menu-item-has-children"><a href="#">Single Product Layout</a>
-                                        <ul class="dropdown">
-                                            <li><a href="blog-post-left.html">Left Sidebar</a></li>
-                                            <li><a href="blog-post-right.html">Right Sidebar</a></li>
-                                            <li><a href="blog-post-fullwidth.html">No Sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="page-about.html">About Us</a></li>
-                                    <li><a href="page-contact.html">Contact</a></li>
-                                    <li><a href="page-account.html">My Account</a></li>
-                                    <li><a href="page-login.html">Login</a></li>
-                                    <li><a href="page-register.html">Register</a></li>
-                                    <li><a href="page-purchase-guide.html">Purchase Guide</a></li>
-                                    <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="page-terms.html">Terms of Service</a></li>
-                                    <li><a href="page-404.html">404 Page</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children"><a href="#">Language</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">English</a></li>
-                                    <li><a href="#">French</a></li>
-                                    <li><a href="#">German</a></li>
-                                    <li><a href="#">Spanish</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                    <!-- mobile menu end -->
-                </div>
                 <div class="mobile-header-info-wrap">
                     <div class="single-mobile-header-info">
-                        <a href="page-contact.html"><i class="fi-rs-marker"></i> Our location </a>
+                        <a href="page-contact.html"><i class="fi-rs-marker"></i> About Us </a>
                     </div>
                     <div class="single-mobile-header-info">
-                        <a href="page-login.html"><i class="fi-rs-user"></i>Log In / Sign Up </a>
+                        <a href="{{ route('login') }}"><i class="fi-rs-user"></i>Log In / Sign Up </a>
                     </div>
                     <div class="single-mobile-header-info">
-                        <a href="#"><i class="fi-rs-headphones"></i>(+01) - 2345 - 6789 </a>
+                        <a href="#"><i class="fi-rs-headphones"></i>+60 13-609 0205</a>
                     </div>
                 </div>
                 <div class="mobile-social-icon mb-50">
                     <h6 class="mb-15">Follow Us</h6>
-                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook-white.svg" alt=""></a>
-                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter-white.svg" alt=""></a>
-                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram-white.svg" alt=""></a>
-                    <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest-white.svg" alt=""></a>
-                    <a href="#"><img src="assets/imgs/theme/icons/icon-youtube-white.svg" alt=""></a>
+                    <a href="#"><img src="{!! asset('assets/imgs/theme/icons/icon-facebook-white.svg') !!}" alt=""></a>
+                    <a href="#"><img src="{!! asset('assets/imgs/theme/icons/icon-instagram-white.svg') !!}" alt=""></a>
                 </div>
-                <div class="site-copyright"> Copyright 2021 © Nest. All rights reserved. Powered by AliThemes.</div>
+                <div class="site-copyright"> Copyright 2021 © West Alley Cafe</div>
             </div>
         </div>
     </div>
