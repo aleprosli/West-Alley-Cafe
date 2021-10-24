@@ -36,7 +36,7 @@
             <div class="col-lg-4 d-none d-xl-block">
                 <div class="banner-img style-3 wow fadeIn animated animated animated" style="background-image: url(assets/imgs/logo.jpg);">
                     <div class="banner-text mt-50">
-                        <h3 class="mb-50">Know <br> more <br><span class="text-brand">about<br> us</span></h3>
+                        <h3 class="mb-50"><span class="text-brand">Know <br> more <br>about<br> us</span></h3>
                         <a href="shop-grid-right.html" class="btn btn-xs">More <i class="fi-rs-arrow-small-right"></i></a>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
 <section class="product-tabs section-padding position-relative wow fadeIn animated">
     <div class="container">
         <div class="section-title style-2">
-            <h3>Popular Products</h3>
+            <h3>Popular Choice</h3>
             <ul class="nav nav-tabs links" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="nav-tab-one" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="tab-one" aria-selected="true">All</button>
