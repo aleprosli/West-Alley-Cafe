@@ -7,24 +7,26 @@
             <div class="col-xl-8 col-lg-12">
                 <div class="home-slide-cover">
                     <div class="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
-                        <div class="single-hero-slider single-animation-wrap" style="background-image: url(assets/imgs/slider/slider-3.png);">
+                        <div class="single-hero-slider single-animation-wrap" style="background-image: url(assets/imgs/ramengrilledsalmon.jpg);">
                             <div class="slider-content">
-                                <h1 class="display-2 mb-40">Pure Coffe<br> Big discount</h1>
-                                <p class="mb-65">Save up to 50% off on your first order</p>
-                                <form class="form-subcriber d-flex">
-                                    <input type="email" placeholder="Your emaill address">
-                                    <button class="btn" type="submit">Subscribe</button>
-                                </form>
+                                <h1 class="display-2 mb-40">Ramen<br> Grill Salmon</h1>
+                                <p class="mb-65">Ramen, seasoned fresh grill salmon, homemade creamy sauce </p>
+                                    <a href="https://www.foodpanda.my/restaurant/ya3r/west-alley" class="btn btn-xs">Buy Now <i class="fi-rs-arrow-small-right"></i></a>
                             </div>
                         </div>
-                        <div class="single-hero-slider single-animation-wrap" style="background-image: url(assets/imgs/slider/slider-4.png);">
+                        <div class="single-hero-slider single-animation-wrap" style="background-image: url(assets/imgs/foodpanda.png);">
                             <div class="slider-content">
-                                <h1 class="display-2 mb-40">Snacks box<br> daily save</h1>
-                                <p class="mb-65">Sign up for the daily newsletter</p>
-                                <form class="form-subcriber d-flex">
-                                    <input type="email" placeholder="Your emaill address">
-                                    <button class="btn" type="submit">Subscribe</button>
-                                </form>
+                                <h1 class="display-3 mb-40">Get delivered to your door by</h1>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <a href="https://www.foodpanda.my/restaurant/ya3r/west-alley" class="btn btn-xs">Get Now <i class="fi-rs-arrow-small-right"></i></a>
+
                             </div>
                         </div>
                     </div>
@@ -32,10 +34,10 @@
                 </div>
             </div>
             <div class="col-lg-4 d-none d-xl-block">
-                <div class="banner-img style-3 wow fadeIn animated animated animated">
+                <div class="banner-img style-3 wow fadeIn animated animated animated" style="background-image: url(assets/imgs/logo.jpg);">
                     <div class="banner-text mt-50">
-                        <h2 class="mb-50">Delivered <br> to <span class="text-brand">your<br> home</span></h2>
-                        <a href="shop-grid-right.html" class="btn btn-xs">Shop Now <i class="fi-rs-arrow-small-right"></i></a>
+                        <h2 class="mb-50">Know <br> more <span class="text-brand">about<br> us</span></h2>
+                        <a href="shop-grid-right.html" class="btn btn-xs">More <i class="fi-rs-arrow-small-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -58,15 +60,6 @@
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="nav-tab-three" data-bs-toggle="tab" data-bs-target="#tab-three" type="button" role="tab" aria-controls="tab-three" aria-selected="false">Sandwich</button>
                 </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="nav-tab-four" data-bs-toggle="tab" data-bs-target="#tab-four" type="button" role="tab" aria-controls="tab-four" aria-selected="false">Salmon</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="nav-tab-five" data-bs-toggle="tab" data-bs-target="#tab-five" type="button" role="tab" aria-controls="tab-five" aria-selected="false">Chicken</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="nav-tab-six" data-bs-toggle="tab" data-bs-target="#tab-six" type="button" role="tab" aria-controls="tab-six" aria-selected="false">Meats</button>
-                </li>
             </ul>
         </div>
         <!--End nav-tabs-->
@@ -79,15 +72,10 @@
                             <div class="product-img-action-wrap">
                                 <div class="product-img product-img-zoom">
                                     <a href="shop-product-right.html">
-                                        <img class="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="">
-                                        <img class="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="">
+                                        <img class="default-img" src="{{ asset('/storage/image/'.$food->image) }}" alt="" height="200px" weight="50x">
+                                        <img class="hover-img" src="{{ asset('/storage/image/'.$food->image) }}" alt="" height="200px" weight="50x">
                                     </a>
                                 </div>
-                                {{-- <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div> --}}
                             </div>
                             <div class="product-content-wrap">
                                 <div class="product-category">
@@ -106,8 +94,8 @@
                                 </div>
                                 <div class="product-card-bottom">
                                     <div class="product-price">
-                                        <span>{{ $food->price_promotion }}</span>
-                                        <span class="old-price">{{ $food->price }}</span>
+                                        <span>RM{{ $food->price_promotion }}</span>
+                                        <span class="old-price">RM{{ $food->price }}</span>
                                     </div>
                                     <div class="add-cart">
                                         <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Buy Now </a>
@@ -157,8 +145,8 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="shop-product-right.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-3-1.jpg" alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-3-2.jpg" alt="">
+                                                <img class="default-img" src="{{ asset('/storage/image/'.$food->image) }}" alt="" height="200px" weight="50x">
+                                                <img class="hover-img" src="{{ asset('/storage/image/'.$food->image) }}" alt="" height="200px" weight="50x">
                                             </a>
                                         </div>
                                         <div class="product-action-1">
@@ -181,8 +169,8 @@
                                             </div>
                                         </div>
                                         <div class="product-price mt-10">
-                                            <span>{{ $food->price }} </span>
-                                            <span class="old-price">{{ $food->price }}/span>
+                                            <span>RM{{ $food->price_promotion }}</span>
+                                            <span class="old-price">RM{{ $food->price }}/span>
                                         </div>
                                         <div class="sold mt-15 mb-15">
                                             <div class="progress mb-5">
