@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -30,6 +31,7 @@ class HomeController extends Controller
     public function adminHome()
     {
         $foods = Food::all();
-        return view('admin.home',compact('foods'));
+        $categories = Category::all();
+        return view('admin.home',compact('foods','categories'));
     }
 }
