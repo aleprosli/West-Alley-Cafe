@@ -4,7 +4,7 @@
 <div class="page-header breadcrumb-wrap">
     <div class="container">
         <div class="breadcrumb">
-            <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+            <a href="{{ route('/') }}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
             <span></span> Pages
             <span></span> My Account
         </div>
@@ -87,14 +87,14 @@
                                                     @foreach( $foods as $key=> $food)
                                                         <tr>
                                                             <td>{{ $key + 1 }}</td>
-                                                            <td>{{ $food->category_id ?? NULL }}</td>
+                                                            <td>{{ $food->category()->value('type') ?? NULL }}</td>
                                                             <td>{{ $food->name }}</td>
                                                             <td>{{ $food->price }}</td>
                                                             <td>{{ $food->price_promotion }}</td>
                                                             <td><a href="#" class="btn-small d-block">View</a>
                                                             </td>
                                                             <td><a href="{{ route('admin.home') }}" type="button" class="btn btn-warning font-weight-bold">Edit</a>
-                                                                <a href="{{ route('admin.home') }}" type="button" class="btn btn-danger submit font-weight-bold">Delete</a></td>
+                                                                <a href="{{ route('menu:destroy') }}" type="button" class="btn btn-danger submit font-weight-bold">Delete</a></td>
                                                         </tr>
                                                     @endforeach
                                                 </tbody>
@@ -161,7 +161,14 @@
                                                     @csrf
                                                     <div class="input-style mb-20">
                                                         <label>Category</label>
-                                                        <input name="category" placeholder="Category" type="text">
+                                                        <div class="form-group col-lg-12">
+                                                            <select class="select" name="category_id">
+                                                                @foreach($categories as $category)
+                                                                    <option value="{{ $category->id}}">{{ $category->type}}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                        
                                                     </div>
                                                     <div class="input-style mb-20">
                                                         <label>Nama Makanan</label>
@@ -174,6 +181,10 @@
                                                     <div class="input-style mb-20">
                                                         <label>Harga Promosi</label>
                                                         <input name="price_promotion" placeholder="Harga Promosi" type="text">
+                                                    </div>
+                                                    <div class="input-style mb-20">
+                                                        <label>Harga Promosi</label>
+                                                        <input name="image" placeholder="Harga Promosi" type="file">
                                                     </div>
                                                     <button class="submit submit-auto-width" type="submit">Tambah Menu</button>
                                                 </form>
