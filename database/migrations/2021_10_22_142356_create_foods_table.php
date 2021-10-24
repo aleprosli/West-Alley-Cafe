@@ -19,6 +19,7 @@ class CreateFoodsTable extends Migration
             $table->string('name')->nullable();
             $table->decimal('price',8,2)->nullable();
             $table->decimal('price_promotion',8,2)->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
