@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Food;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class FoodController extends Controller
 {
@@ -42,6 +44,12 @@ class FoodController extends Controller
         $food->name = $request->name;
         $food->price = $request->price;
         $food->price_promotion = $request->price_promotion;
+        if($request->hasFile('image'))
+        {
+            $filename = $request->image->getClientOriginalName();
+            Storage::disk('public')->put('image/'.$filename, File::get($request->image));
+            $food->image = $filename;
+        }
         $food->save();
 
         return redirect()->route('admin.home')->with([
