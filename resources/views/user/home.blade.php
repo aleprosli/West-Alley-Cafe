@@ -91,7 +91,7 @@
                             </div>
                             <div class="product-content-wrap">
                                 <div class="product-category">
-                                    <a href="shop-grid-right.html">Vegetables</a>
+                                    <a href="shop-grid-right.html">{{ $food->category()->value('type') ?? NULL}}</a>
                                 </div>
                                 <h2><a href="shop-product-right.html">{{ $food->name }}</a></h2>
                                 <div class="product-rate-cover">
@@ -173,7 +173,7 @@
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop-grid-right.html">Hodo Foods</a>
+                                            <a href="shop-grid-right.html">{{ $food->category()->value('type') ?? NULL}}</a>
                                         </div>
                                         <h2><a href="shop-product-right.html">{{ $food->name }} </a></h2>
                                         <div class="product-rate d-inline-block">
