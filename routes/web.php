@@ -18,9 +18,10 @@ Route::get('/', function () {
     $foods = Food::all();
 
     return view('user.home',compact('foods'));
-});
+})->name('/');
 
 Auth::routes();
 
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 Route::post('/tambah-menu', [App\Http\Controllers\Admin\FoodController::class, 'store'])->name('menu:store');
+Route::get('/buang-menu', [App\Http\Controllers\Admin\FoodController::class, 'destroy'])->name('menu:destroy');
