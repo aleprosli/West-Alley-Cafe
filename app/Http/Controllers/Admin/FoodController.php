@@ -38,6 +38,7 @@ class FoodController extends Controller
     {
         //store moto guna relationship
         $food = new Food();
+        $food->category_id = $request->category_id;
         $food->name = $request->name;
         $food->price = $request->price;
         $food->price_promotion = $request->price_promotion;
