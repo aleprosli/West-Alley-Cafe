@@ -36,7 +36,7 @@
             <div class="col-lg-4 d-none d-xl-block">
                 <div class="banner-img style-3 wow fadeIn animated animated animated" style="background-image: url(assets/imgs/logo.jpg);">
                     <div class="banner-text mt-50">
-                        <h2 class="mb-50">Know <br> more <span class="text-brand">about<br> us</span></h2>
+                        <h3 class="mb-50">Know <br> more <br><span class="text-brand">about<br> us</span></h3>
                         <a href="shop-grid-right.html" class="btn btn-xs">More <i class="fi-rs-arrow-small-right"></i></a>
                     </div>
                 </div>
