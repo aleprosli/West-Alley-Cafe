@@ -4,8 +4,7 @@
 <div class="page-header breadcrumb-wrap">
     <div class="container">
         <div class="breadcrumb">
-            <a href="{{ route('/') }}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
-            <span></span> Pages
+            <a href="{{ route('/home') }}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
             <span></span> My Account
         </div>
     </div>
@@ -94,7 +93,7 @@
                                                             <td><a href="#" class="btn-small d-block">View</a>
                                                             </td>
                                                             <td><a href="{{ route('admin.home') }}" type="button" class="btn btn-warning font-weight-bold">Edit</a>
-                                                                <a href="{{ route('menu:destroy') }}" type="button" class="btn btn-danger submit font-weight-bold">Delete</a></td>
+                                                                <a href="{{ route('menu:destroy',$food) }}" type="button" class="btn btn-danger submit font-weight-bold">Delete</a></td>
                                                         </tr>
                                                     @endforeach
                                                 </tbody>
@@ -157,7 +156,7 @@
                                         <p>To track your order please enter your OrderID in the box below and press "Track" button. This was given to you on your receipt and in the confirmation email you should have received.</p>
                                         <div class="row">
                                             <div class="col-lg-8">
-                                                <form class="contact-form-style mt-30 mb-50" action="{{ route('menu:store') }}" method="post">
+                                                <form class="contact-form-style mt-30 mb-50" action="{{ route('menu:store') }}" method="post" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="input-style mb-20">
                                                         <label>Category</label>
@@ -183,7 +182,7 @@
                                                         <input name="price_promotion" placeholder="Harga Promosi" type="text">
                                                     </div>
                                                     <div class="input-style mb-20">
-                                                        <label>Harga Promosi</label>
+                                                        <label>Gambar Makanan</label>
                                                         <input name="image" placeholder="Harga Promosi" type="file">
                                                     </div>
                                                     <button class="submit submit-auto-width" type="submit">Tambah Menu</button>
