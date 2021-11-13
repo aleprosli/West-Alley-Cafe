@@ -98,7 +98,7 @@
                                         <span class="old-price">RM{{ $food->price }}</span>
                                     </div>
                                     <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Buy Now </a>
+                                        <a class="add" href="{{ route('add:to:cart',$food->id) }}"><i class="fi-rs-shopping-cart mr-5"></i>Buy Now </a>
                                     </div>
                                 </div>
                             </div>
