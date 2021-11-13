@@ -34,3 +34,9 @@ Route::get('/order-menu', function(){
   
     dd('Send Email Successfully');
 });
+
+Route::get('cart', [App\Http\Controllers\FoodController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [App\Http\Controllers\FoodController::class, 'addToCart'])->name('add:to:cart');
+Route::get('checkout/{id}', [App\Http\Controllers\FoodController::class, 'checkout'])->name('checkout');
+Route::patch('update-cart', [App\Http\Controllers\FoodController::class, 'update'])->name('update:cart');
+Route::get('remove-from-cart', [App\Http\Controllers\FoodController::class, 'remove'])->name('remove:from:cart');
